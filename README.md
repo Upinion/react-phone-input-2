@@ -13,7 +13,7 @@ npm install react-phone-input-2 --save
 
 ```jsx
 React.render(
-  <ReactPhoneInput defaultCountry={'us'} onChange={handleOnChange}/>,
+  <PhoneInput defaultCountry={'us'} onChange={handleOnChange}/>,
   document.getElementById('root')
 );
 ```
@@ -170,7 +170,7 @@ function handleOnChange(value) {
 </table>
 
 ```jsx
-<ReactPhoneInput
+<PhoneInput
   inputExtraProps={{
     name: 'phone',
     required: true,
@@ -211,7 +211,7 @@ function handleOnChange(value) {
 
 Regions selected: {'europe'}
 ```jsx
-<ReactPhoneInput
+<PhoneInput
   defaultCountry='it'
   regions={'europe'}
 />
@@ -219,7 +219,7 @@ Regions selected: {'europe'}
 
 Regions selected: {['north-america', 'carribean']}
 ```jsx
-<ReactPhoneInput
+<PhoneInput
   defaultCountry='ca'
   regions={['north-america', 'carribean']}
 />
@@ -239,7 +239,7 @@ Regions selected: {['north-america', 'carribean']}
 </table>
 
 ```jsx
-<ReactPhoneInput
+<PhoneInput
   onlyCountries=['de', 'es']
   localization={{'Germany': 'Deutschland', 'Spain': 'España'}}
 />

@@ -952,7 +952,7 @@ class PhoneInput extends React.Component {
     }
 }
 
-ReactPhoneInput.propTypes = {
+PhoneInput.propTypes = {
     excludeCountries: PropTypes.arrayOf(PropTypes.string),
     onlyCountries: PropTypes.arrayOf(PropTypes.string),
     preferredCountries: PropTypes.arrayOf(PropTypes.string),
@@ -997,7 +997,7 @@ ReactPhoneInput.propTypes = {
     isValid: PropTypes.func
 };
 
-ReactPhoneInput.defaultProps = {
+PhoneInput.defaultProps = {
     excludeCountries: [],
     onlyCountries: [],
     preferredCountries: [],
