@@ -68,12 +68,12 @@ if (TARGET === 'dev') {
 if (TARGET === 'build') {
   module.exports = merge(common, {
     entry: {
-      'react-phone-input': path.resolve(ROOT_PATH, 'src/index.js')
+      'phone-input': path.resolve(ROOT_PATH, 'src/index.js')
     },
     output: {
       path: path.resolve(ROOT_PATH, 'dist'),
       filename: 'index.js',
-      library: 'ReactPhoneInput',
+      library: 'PhoneInput',
       libraryTarget: 'umd'
     },
     externals: [{

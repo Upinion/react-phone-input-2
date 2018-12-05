@@ -13,7 +13,7 @@ import countryData from './country_data.js';
 
 import './styles.less';
 
-class ReactPhoneInput extends React.Component {
+class PhoneInput extends React.Component {
     constructor(props) {
         super(props);
         let filteredCountries = countryData.allCountries;
@@ -1060,6 +1060,6 @@ ReactPhoneInput.defaultProps = {
     }
 };
 
-export default ReactPhoneInput;
+export default PhoneInput;
 
 if (__DEV__) require('./demo.js');
