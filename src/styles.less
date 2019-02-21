@@ -1,5 +1,6 @@
 @border-color: #7F7F7F;
-@border-color-focus: rgb(204, 183, 91);
+@border-color-error: #F40365;
+@border-color-focus: #4A4A4A;
 
 .react-tel-input {
   font-family: 'Roboto', sans-serif;
@@ -724,8 +725,8 @@
     margin-bottom: 0 !important;
     padding-left: 48px;
     margin-left: 0;
-    background: #FFFFFF;
-    border: 1px solid #d79f9f;
+    background: transparent;
+    border: 1px solid @border-color;
     border-radius: 5px;
     line-height: 25px;
     min-height: 55px;
@@ -733,22 +734,27 @@
     width: 100%;
     outline: none;
     &.invalid-number {
-      border: 1px solid #d79f9f;
-      background-color: #FAF0F0;
-      border-left-color: #cacaca;
+      border: 1px solid @border-color-error;
+      background-color: transparent;
+      border-left-color: @border-color-error;
       &:focus {
-        border: 1px solid #d79f9f;
-        border-left-color: #cacaca;
-        background-color: #FAF0F0;
+        border: 1px solid @border-color-focus;
+        border-left-color: @border-color-focus;
+        background-color: transparent;
+      }
+      &:focus + .flag-dropdown {
+        border-color: @border-color-focus;
       }
     }
+    &.invalid-number + .flag-dropdown {
+        border-color: @border-color-error;
+    }
     &:hover {
-      border-color: @border-color;
+      border-color: @border-color-focus;
     }
-    &:hover + .flag-dropdown{
-      border-color: @border-color;
+    &:hover + .flag-dropdown {
+      border-color: @border-color-focus;
     }
-
     &:focus {
       border-color: @border-color-focus;
     }
@@ -762,7 +768,7 @@
     top: 0;
     bottom: 0;
     padding: 0;
-    border: 0px solid #d79f9f;
+    border: 0px solid @border-color;
     border-right-width: 1px;
     border-radius: 3px 0 0 3px;
     &:hover {
