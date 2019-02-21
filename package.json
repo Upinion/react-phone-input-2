@@ -1,6 +1,6 @@
 {
   "name": "@upinion/phone-input",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A react component to format phone numbers",
   "main": "dist/index.js",
   "scripts": {
