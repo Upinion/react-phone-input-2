@@ -884,9 +884,9 @@ class PhoneInput extends React.Component {
         const arrowClasses = classNames({ arrow: true, up: showDropdown });
         const inputClasses = classNames({
             'form-control': true,
-            'invalid-number': !this.props.isValid(
+            'invalid-number': !this.props.validator(
                 formattedNumber.replace(/\D/g, '')
-            ),
+            ) || !this.props.isValid,
             [this.props.inputClass]: true
         });
 
@@ -987,6 +987,7 @@ PhoneInput.propTypes = {
     ]),
 
     inputExtraProps: PropTypes.object,
+    isValid: PropTypes.bool,
     localization: PropTypes.object,
 
     onChange: PropTypes.func,
@@ -994,7 +995,7 @@ PhoneInput.propTypes = {
     onBlur: PropTypes.func,
     onClick: PropTypes.func,
     onKeyDown: PropTypes.func,
-    isValid: PropTypes.func
+    validator: PropTypes.func
 };
 
 PhoneInput.defaultProps = {
@@ -1021,7 +1022,7 @@ PhoneInput.defaultProps = {
 
     autoFormat: true,
     disableAreaCodes: false,
-    isValid: (inputNumber) => {
+    validator: (inputNumber) => {
         return some(countryData.allCountries, (country) => {
             return (
                 startsWith(inputNumber, country.dialCode) ||
@@ -1038,6 +1039,7 @@ PhoneInput.defaultProps = {
     regions: '',
 
     inputExtraProps: {},
+    isValid: true,
     localization: {},
 
     onEnterKeyPress: () => {},
